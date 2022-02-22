@@ -11,5 +11,34 @@
 /documentation/.docusaurus
 /documentation/.cache-loader
 
+# Testing
+/testing/build
+/testing/coverage
+/testing/project/**/[Ll]ibrary/
+/testing/project/**/[Tt]emp/
+/testing/project/**/ProjectSettings/
+/testing/project/**/UnityPackageManager/
+/testing/project/**/[Oo]bj/
+/testing/project/**/[Ll]ogs/
+/testing/project/**/Assets/AssetStoreTools*
+/testing/project/**/.vs/
+/testing/project/**/ExportedObj/
+/testing/project/**/.consulo/
+/testing/project/**/*.csproj
+/testing/project/**/*.unityproj
+/testing/project/**/*.sln
+/testing/project/**/*.suo
+/testing/project/**/*.tmp
+/testing/project/**/*.user
+/testing/project/**/*.userprefs
+/testing/project/**/*.pidb
+/testing/project/**/*.booproj
+/testing/project/**/*.svd
+/testing/project/**/*.pdb
+/testing/project/**/*.opendb
+/testing/project/**/*.pidb.meta
+/testing/project/**/*.pdb.meta
+/testing/project/**/sysinfo.txt
+
 # System
 .DS_Store
