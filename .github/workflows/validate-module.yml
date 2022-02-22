@@ -3,10 +3,10 @@ name: Validate Module
 on:
   push:
     paths-ignore:
-      - documentation/**
+      - /documentation/**
   pull_request:
     paths-ignore:
-      - documentation/**
+      - /documentation/**
 
 jobs:
   main:
@@ -27,8 +27,8 @@ jobs:
       - name: Cache Node Module Dependencies
         uses: actions/cache@v2
         with:
-          path: "**/node_modules"
-          key: nodemodules-${{ runner.os }}-${{ hashFiles('./package-lock.json') }}
+          path: "/node_modules"
+          key: nodemodules-${{ runner.os }}-${{ hashFiles('/package-lock.json') }}
 
       - name: Install Dependencies
         run: npm install

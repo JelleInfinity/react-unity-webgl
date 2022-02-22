@@ -3,10 +3,10 @@ name: Validate Documentation
 on:
   push:
     paths:
-      - documentation/**
+      - /documentation/**
   pull_request:
     paths:
-      - documentation/**
+      - /documentation/**
 
 jobs:
   main:
@@ -24,10 +24,16 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org
 
+      - name: Cache Node Module Dependencies
+        uses: actions/cache@v2
+        with:
+          path: "/documentation/node_modules"
+          key: nodemodules-${{ runner.os }}-${{ hashFiles('/documentation/package-lock.json') }}
+
       - name: Install Dependencies
-        working-directory: ./documentation
+        working-directory: /documentation
         run: npm install
 
       - name: Build Source
-        working-directory: ./documentation
+        working-directory: /documentation
         run: npm run build
