@@ -5,8 +5,8 @@ on:
     - cron: 30 1 * * *
 
 jobs:
-  close-issues:
-    name: Close Issue
+  main:
+    name: Close Issues
 
     runs-on: ubuntu-latest
 
