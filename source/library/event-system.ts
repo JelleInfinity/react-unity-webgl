@@ -48,10 +48,6 @@ export class EventSystem {
       if (typeof window.dispatchReactUnityEvent === "undefined") {
         window.dispatchReactUnityEvent = dispatchReactUnityEvent;
       }
-      // Create object for legacy bindings on the window.
-      if (typeof window.ReactUnityWebGL === "undefined") {
-        window.ReactUnityWebGL = {};
-      }
     }
   }
 
@@ -71,12 +67,6 @@ export class EventSystem {
   ): void {
     // Adds the event to the event map.
     this.eventMap.set(eventName, eventListener);
-
-    // Add legacy binding to the window.
-    if (typeof window !== "undefined") {
-      window.ReactUnityWebGL[eventName] = (...parameters: any) =>
-        eventListener(...parameters);
-    }
   }
 
   /**
@@ -88,11 +78,6 @@ export class EventSystem {
   public removeEventListener(eventName: string): void {
     // Remove the event from the event map.
     this.eventMap.delete(eventName);
-
-    // Remove legacy binding from the window.
-    if (typeof window !== "undefined") {
-      delete window.ReactUnityWebGL[eventName];
-    }
   }
 
   /**
@@ -101,13 +86,6 @@ export class EventSystem {
    * @example unityContext.removeAllEventListeners();
    */
   public removeAllEventListeners(): void {
-    // Remove legacy bindings from the window.
-    if (typeof window !== "undefined") {
-      this.eventMap.forEach(function (_value, key) {
-        delete window.ReactUnityWebGL[key];
-      });
-    }
-
     // Clear the event map.
     this.eventMap.clear();
   }
