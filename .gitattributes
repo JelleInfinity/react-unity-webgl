@@ -1,3 +1,4 @@
-# Excludes Distribution from statistics
+# Exclude distribution, documentation and testing from statistics
 distribution/* linguist-vendored
 documentation/* linguist-vendored
+testing/* linguist-vendored
