@@ -5,14 +5,6 @@ import { IUnityInstanceParameters } from "../source/interfaces/unity-instance-pa
  */
 declare global {
   /**
-   * Object containing all registered legacy unity event listeners.
-   * @deprecated
-   */
-  var ReactUnityWebGL: {
-    [eventName: string]: Function;
-  };
-
-  /**
    * Dispatches an event that has been registered to all event systems.
    */
   var dispatchReactUnityEvent: Function;
